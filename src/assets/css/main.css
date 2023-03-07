@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+@font-face {
+    font-family: BelweBold;
+    src: url('../fonts/BelweBoldBT.ttf');
+}
+
+:root {
+    --primary: rgb(194, 46, 32);
+    --secondary: rgb(243, 161, 36);
+    --accent: rgb(247, 207, 118);
+    --primary-opacity: rgba(194, 46, 32, 0.5);
+    --secondary-opacity: rgba(243, 161, 36, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.hero {
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none !important;
+}
+
+.logo img {
+    height: 50px;
+    display: block;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0);
+    padding: 20px;
+    transition: left 0.3s;
+    z-index: 999;
+}
+
+.navbar.show {
+    left: 0 !important;
+}
+
+.hide-scroll {
+    overflow: hidden;
+}
+
+.navbar ul {
+    all: unset;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar ul a {
+    all: unset;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.navbar ul a:hover {
+    color: var(--secondary);
+}
+
+.close-nav {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.close-nav button {
+    all: unset;
+    background: transparent;
+    font-size: 42px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 3px;
+    color: white;
+}
+
+.close-nav button:hover {
+    color: white;
+    background: transparent;
+}
+
+.menu-bar button {
+    background: transparent;
+    color: white;
+    height: 50px;
+    width: 50px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.menu-bar i {
+    display: block;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+}
+
+.login {
+    border: 1px solid white;
+    padding: 10px 20px 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.menu-bar i::after {
+    display: block;
+    content: "";
+    border-top: 3px solid white;
+    margin: 6px 0;
+}
+
+@media (min-width: 640px) {
+    .navbar {
+        all: unset;
+        display: block;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .navbar ul a {
+        font-size: inherit;
+        font-weight: bold;
+        font-family: 'Space Mono', monospace;
+        font-size: 20px;
+
+    }
+
+    .login {
+        border: 1px solid white;
+        padding: 10px 20px 10px 20px;
+        transition: all 0.3s ease;
+    }
+
+    .login:hover {
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .login:hover>a {
+        color: var(--secondary);
+        cursor: pointer;
+    }
+
+    .close-nav,
+    .menu-bar {
+        display: none;
+    }
+}

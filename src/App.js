@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Importing CSS
+import './assets/css/main.css';
+import './assets/css/home.css';
+import './assets/css/authentication.css';
+
+// Importing Pages
+import Index from './pages/Index';
+import Register from './pages/Register';
+import Login from './pages/Login';
+
+// Importing FirebaseProvider
+import { AuthProvider } from "./providers/AuthProvider";
+import { FirebaseProvider } from "./providers/FirebaseProvider";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FirebaseProvider>
+      <AuthProvider>
+
+        <BrowserRouter>
+          <Routes>
+            {/* Index Page */}
+            <Route index element={<Index />} />
+            {/* Register Page */}
+            <Route path='/register' element={<Register />} />
+            {/* Login Page */}
+            <Route path='/login' element={<Login />} />
+
+            {/* Dashboard Page (Restricted) */}
+            <Route path='/dashboard' element={<Dashboard />} />
+          </Routes>
+        </BrowserRouter>
+
+      </AuthProvider>
+    </FirebaseProvider>
+
+
   );
 }
 
