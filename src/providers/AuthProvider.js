@@ -49,6 +49,7 @@ export const AuthProvider = (props) => {
                 uid: user.uid,
                 email: email,
                 displayName: displayName,
+                photoName: 'default_profile.png',
                 dateCreated: serverTimestamp(),
             };
 
@@ -78,7 +79,7 @@ export const AuthProvider = (props) => {
                 console.error(msg);
             }
             if (user) {
-                console.log(`Logged in as uid(${user.uid}) email(${user.email})`);
+
             }
             setUser(user);
             return true;
@@ -94,7 +95,6 @@ export const AuthProvider = (props) => {
         try {
             setUser(null); // shut down the listeners
             await signOut(myAuth);
-            console.log('Signed Out');
             return true;
         } catch (ex) {
             console.error(ex);
@@ -108,7 +108,6 @@ export const AuthProvider = (props) => {
         if (myAuth) {
             let unsubscribe = onAuthStateChanged(myAuth, (user) => {
                 // if user is null, then we force them to login
-                console.log('onAuthStateChanged(): got user', user);
                 if (user) {
                     setUser(user);
                 }
@@ -130,7 +129,6 @@ export const AuthProvider = (props) => {
                     docRef,
                     (docSnap) => {
                         let profileData = docSnap.data();
-                        console.log('Got user profile:', profileData, docSnap);
                         if (!profileData) {
                             setAuthErrorMessages([
                                 `No profile doc found in Firestore at: ${docRef.path}`,
