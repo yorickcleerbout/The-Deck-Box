@@ -4,8 +4,6 @@ import { AuthContext } from '../../providers/AuthProvider';
 // Import Pages
 import Login from '../Login';
 
-
-
 // Import Components
 import Sidebar from '../../components/Sidebar';
 
@@ -18,19 +16,10 @@ const Overview = (props) => {
 
         return (
             <>
-
                 <Sidebar />
-
                 <div className='main-content'>
-
-                    Overview?
-
+                    <h1 className='title'>Overview</h1>
                 </div>
-
-
-                {/* <h1>Logged in as: {profile.displayName}</h1>
-                <button onClick={logout}>Logout</button>
-                <Overview /> */}
 
             </>
         )

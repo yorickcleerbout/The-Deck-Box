@@ -20,15 +20,8 @@ const Cards = (props) => {
                 <Sidebar />
 
                 <div className='main-content'>
-
-                    Cards?
-
+                    <h1 className='title'>Your Cards</h1>
                 </div>
-
-
-                {/* <h1>Logged in as: {profile.displayName}</h1>
-                <button onClick={logout}>Logout</button>
-                <Overview /> */}
 
             </>
         )

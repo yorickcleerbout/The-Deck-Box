@@ -20,15 +20,8 @@ const Shared = (props) => {
                 <Sidebar />
 
                 <div className='main-content'>
-
-                    Shared?
-
+                    <h1 className='title'>Shared Decks</h1>
                 </div>
-
-
-                {/* <h1>Logged in as: {profile.displayName}</h1>
-                <button onClick={logout}>Logout</button>
-                <Overview /> */}
 
             </>
         )

@@ -20,15 +20,8 @@ const Decks = (props) => {
                 <Sidebar />
 
                 <div className='main-content'>
-
-                    Decks?
-
+                    <h1 className='title'>Your Decks</h1>
                 </div>
-
-
-                {/* <h1>Logged in as: {profile.displayName}</h1>
-                <button onClick={logout}>Logout</button>
-                <Overview /> */}
 
             </>
         )

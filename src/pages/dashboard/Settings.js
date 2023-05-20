@@ -20,15 +20,8 @@ const Settings = (props) => {
                 <Sidebar />
 
                 <div className='main-content'>
-
-                    Settings?
-
+                    <h1 className='title'>Account Settings</h1>
                 </div>
-
-
-                {/* <h1>Logged in as: {profile.displayName}</h1>
-                <button onClick={logout}>Logout</button>
-                <Overview /> */}
 
             </>
         )

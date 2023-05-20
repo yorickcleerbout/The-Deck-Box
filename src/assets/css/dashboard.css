@@ -7,4 +7,15 @@
     transform: all 0.5s ease;
     width: calc(100% - 80px);
     padding: 1rem;
+    overflow-x: hidden;
+}
+
+.main-content .title {
+    font-size: 50px;
+    font-family: BelweBold;
+    color: var(--secondary);
+    -webkit-text-stroke: 2.5px var(--primary);
+    position: relative;
+    left: 80px;
+    top: 10px;
 }
