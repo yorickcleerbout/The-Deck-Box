@@ -51,6 +51,9 @@ export const AuthProvider = (props) => {
                 displayName: displayName,
                 photoName: 'default_profile.png',
                 dateCreated: serverTimestamp(),
+                cards: [],
+                decks: [],
+                shared: [],
             };
 
             await setDoc(userDocRef, userDocData);
